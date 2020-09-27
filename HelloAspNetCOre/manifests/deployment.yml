@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-aspnetcore3-deployment
+spec:
+  selector:
+    matchLabels:
+      app: hello-aspnetcore3-pod
+  template:
+    metadata:
+      labels:
+        app: hello-aspnetcore3-pod
+    spec:
+      containers:
+      - name: hello-aspnetcore3-container
+        image: rohi028.azurecr.io/hello-aspnetcore3:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

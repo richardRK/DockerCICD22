@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-aspnetcore3-service
+spec:
+  selector:
+    app: hello-aspnetcore3-pod
+  ports:
+    - port: 8080
+      targetPort: 80
+  type: LoadBalancer
