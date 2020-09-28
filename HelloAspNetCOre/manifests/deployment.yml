@@ -14,6 +14,8 @@ spec:
       containers:
       - name: hello-aspnetcore3-container
         image: rohi028.azurecr.io/hello-aspnetcore3:v1
+        imagePullPolicy: Always
+
         resources:
           limits:
             memory: "128Mi"
